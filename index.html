@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- this container div use for center the card; it's not important for the card strucher -->
+    <div class="container">
+        <!-- we will use CSS flex to create this card for now, we can use grid also but not today -->
+
+        <!-- we can see there are two chiled div inside the card div, 
+            as we all know "div is a block element, so by deafult the div with the class name "card-icon-holder"
+            will tkae the intire width of it parent element and then in the bottom of the "card-icon-holder"
+            div the "card-text-holder" will take the place.
+            " -->
+        <!-- our task is to place them side by side, so lets see how we can achive this -->
+        <style>
+            .container {
+                max-width: 800px;
+                /* since we are using grid to center an element we have give a height */
+                height: 100vh;
+                margin: 20px auto;
+                display: grid;
+                place-items: center;
+                font-family: "Poopins", sans-serif;
+            }
+            
+            .card {
+                /* only property valu in enough to plased the chiled element side by side */
+                display: flex;
+                /* setting the sapce between the chiled element */
+                justify-content: space-between;
+                /* give some space around the card 
+                    it will give 10px of padding each side of the card */
+                padding: 10px;
+                /* simle css to style the card not important the strucher */
+                border: 1px solid rgb(255, 250, 246);
+                border-radius: 5px;
+                background: rgb(247, 148, 77);
+                color: rgb(222, 225, 251);
+                align-items: center;
+            }
+            /* till now our basic need if fullfeid
+            but if we see the "card-text-holder"
+            take too many width of it's parent element called card; 
+            we can controll it too by using css; let's see how   */
+            /* here we are setting the width of the chiled element  */
+            
+            .card-text-holder {
+                max-width: 80%;
+            }
+        </style>
+        <div class="card">
+            <div class="card-icon-holder">
+                <img src="/Frame.png" alt="" />
+            </div>
+            <div class="card-text-holder">
+                <h2 class="ccard-heading">
+                    Dreams doesen't work untill we work for it
+                </h2>
+                <p class="card-description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos voluptatum eum similique molestias quod enim cupiditate itaque mollitia quam ducimus id nesciunt recusandae sed eius consectetur qui, laudantium placeat nam.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
